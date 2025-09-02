@@ -73,7 +73,7 @@ public static void querySpecial(Map<String,Object> params,List<String> typeCode,
 	if(StringUtil.checkString(rentAreaFrom) == true || StringUtil.checkString(rentAreaTo) == true) {
 		where.append(" AND EXISTS (SELECT * FROM rentarea r where b.id = r.buildingid");
 	if(StringUtil.checkString(rentPriceTo)) {
-		where.append(" AND rentarea.value <= " + rentPriceTo);
+		where.append(" AND rentarea.value <= " +  );
 	}
 	if(StringUtil.checkString(rentPriceFrom)) {
 		where.append(" AND rentarea.value >= " + rentPriceFrom);
