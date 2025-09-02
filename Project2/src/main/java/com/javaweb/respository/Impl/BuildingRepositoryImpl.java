@@ -69,6 +69,7 @@ public static void querySpecial(Map<String,Object> params,List<String> typeCode,
 	}
 	String rentPriceTo = (String)params.get("rentPriceTo");
 	String rentPriceFrom = (String)params.get("rentPriceFrom");
+	
 	if(StringUtil.checkString(rentAreaFrom) == true || StringUtil.checkString(rentAreaTo) == true) {
 		where.append(" AND EXISTS (SELECT * FROM rentarea r where b.id = r.buildingid");
 	if(StringUtil.checkString(rentPriceTo)) {
@@ -87,7 +88,16 @@ public static void querySpecial(Map<String,Object> params,List<String> typeCode,
 //	      -- AND r.value >= rentAreaFrom  
 //	      -- AND r.value <= rentAreaTo  
 //	  )
- 
+// neu la String
+ //		String typeCode = (String) params.get("typeCode");
+
+//		if(typeCode != null && typeCode.length() !=0 ) {
+//			String[] typeCodes = typeCode.split(",");
+//			
+//		    String joined = "'" + String.join("','", typeCodes) + "'";
+//		    where.append(" AND renttype.code IN (" + joined + ") ");		
+//		    }
+	
 //	java7 
 //	if(typeCode != null && typeCode.size() !=0 ) {
 //		List<String> code = new ArrayList<>();
@@ -96,6 +106,7 @@ public static void querySpecial(Map<String,Object> params,List<String> typeCode,
 //		}
 //		where.append(" AND renttype.code IN("+String.join(",", code)+") ");
 //	}
+	
 	//java8
 	if(typeCode != null && typeCode.size() !=0 ) {
 		where.append(" AND(");
