@@ -7,6 +7,13 @@ public class BuildingEntity {
 	private String ward;
 	private String street;
 	private Long districtid;
+	private String managerName;
+	private String managerPhoneNumber;
+	private Long floorArea;
+	private String emptyArea;
+	private Long rentPrice;
+	private Long serviceFee;
+	private Long brokerageFee;
 	public Long getId() {
 		return id;
 	}
@@ -79,11 +86,5 @@ public class BuildingEntity {
 	public void setBrokerageFee(Long brokerageFee) {
 		this.brokerageFee = brokerageFee;
 	}
-	private String managerName;
-	private String managerPhoneNumber;
-	private Long floorArea;
-	private String emptyArea;
-	private Long rentPrice;
-	private Long serviceFee;
-	private Long brokerageFee;
+	
 }
